@@ -1,0 +1,40 @@
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+          <h1>Profile</h1>
+      </div>
+  
+      <!-- Login Form -->
+      <form [formGroup]="form">
+        <input type="text" id="login" formControlName="name" class="fadeIn second" name="login" placeholder="name">
+        <input type="text" id="login" formControlName="email" class="fadeIn second" name="login" placeholder="email">
+        <ng-container *ngIf="submitted && f.email.errors">
+          <p class="error-message-repair" *ngIf=" f.email.errors.required">
+              Email is required!
+          </p>
+          <p class="error-message-repair" *ngIf=" f.email.errors.email">
+              Email is not valid!
+          </p>
+      </ng-container>
+      <input type="number" min="1" id="login" formControlName="phone" class="fadeIn second" name="login" placeholder="phone">
+      <input type="number" min="1" id="login" formControlName="mobile" class="fadeIn second" name="login" placeholder="mobile">
+      <input type="text" id="login" formControlName="zipcode" class="fadeIn second" name="login" placeholder="zipcode">
+      <ng-container *ngIf="submitted && f.zipcode.errors">
+        <p class="error-message-repair" *ngIf=" f.zipcode.errors.required">
+            ZipCode is required!
+        </p>
+    </ng-container>
+     
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <!-- <div id="formFooter">
+        <a class="underlineHover" [routerLink]="['/login']">User</a>
+      </div> -->
+  
+    </div>
+  </div>
